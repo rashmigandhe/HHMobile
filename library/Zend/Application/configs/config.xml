@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns:zf="http://framework.zend.com/xml/zend-config-xml/1.0/">
+  <production>
+    <phpSettings>
+      <display_startup_errors>0</display_startup_errors>
+      <display_errors>1</display_errors>
+    </phpSettings>
+    <includePaths>
+      <library><zf:const zf:name="APPLICATION_PATH"/>/../library</library>
+    </includePaths>
+    <bootstrap>
+      <path><zf:const zf:name="APPLICATION_PATH"/>/Bootstrap.php</path>
+      <class>Bootstrap</class>
+    </bootstrap>
+	<appnamespace>Application</appnamespace>
+    <resources>
+      <frontController>
+        <!--<controllerDirectory><zf:const zf:name="APPLICATION_PATH"/>/controllers</controllerDirectory>-->
+		<params>
+			<displayExceptions>1</displayExceptions>
+		</params>
+      </frontController>
+	  <modules>
+	  	<placeholder />
+	  </modules> 
+	  <!--<view>
+	  	<placeholder />
+	 </view>-->
+	  <layout>
+	  	<!--<layoutPath><zf:const zf:name="APPLICATION_PATH"/>/layouts/scripts/</layoutPath>-->
+	  </layout> 
+	  <db>
+	  	<adapter>PDO_MYSQL</adapter>
+		<params>
+			<host>localhost</host>
+			<username>root</username>
+			<password>root</password>
+			<dbname>zend</dbname>
+		</params>
+	 </db>
+	 </resources>
+	 <configuration>
+		 <cache>0</cache>
+		 <theme>forum</theme>
+		 <base_path>zend/public/</base_path>
+	 </configuration>
+  </production>
+ 
+  
+</application>

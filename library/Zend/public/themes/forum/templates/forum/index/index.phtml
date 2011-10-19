@@ -1,0 +1,20 @@
+FROM THEME<h1>Forums</h1>
+<table cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <th align="left">Title</th>
+    <th align="left">Created</th>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <?php
+foreach ($this->forums as $forum) { ?>
+  <tr>
+    <td><b><a href="<?php echo $this->baseUrl()?>/forum/topics/list/id/<?php echo $forum['forum_id']?>"><?php echo $forum['title'] ?></a></b></td>
+    <td><?php echo date_format(date_create($forum['date_created']),"D M d, Y g:i a")?></td>
+  </tr>
+  <?php } ?>
+</table>

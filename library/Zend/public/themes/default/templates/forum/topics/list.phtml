@@ -1,0 +1,23 @@
+<h1>Topics : </h1>
+<table cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <th align="left">Topics</th>
+    <th align="left">Replies</th>
+   
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <?php
+foreach ($this->view['topics'] as $topic) { ?>
+  <tr>
+    <td><b><a href="<?php echo $this->baseUrl()?>/forum/topics/view/id/<?php echo $topic['topic_id']?>"><?php echo $topic['title'] ?></a></b><br />
+      by <?php echo $topic['author'] ?> »<?php echo date_format(date_create($topic['date_created']),"D M d, Y g:i a")?></td>
+    <td><?php echo $topic['replies'] ?></td>
+    
+  </tr>
+  <?php } ?>
+</table>
