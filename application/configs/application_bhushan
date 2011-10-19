@@ -1,0 +1,44 @@
+[production]
+phpSettings.display_startup_errors = 1
+phpSettings.display_errors = 1
+includePaths.library = APPLICATION_PATH "/../library"
+includePaths.zend = APPLICATION_PATH "/../../Library"
+bootstrap.path = APPLICATION_PATH "/Bootstrap.php"
+bootstrap.class = "Bootstrap"
+autoloadernamespaces.amz = "Amz_"
+
+
+resources.frontController.controllerDirectory = APPLICATION_PATH "/controllers"
+resources.frontController.moduleDirectory = APPLICATION_PATH "/modules"
+resources.frontController.plugins.layout = Amz_Controller_Plugin_Layout
+
+resources.modules[] = 
+
+resources.layout.layoutPath = APPLICATION_PATH "/layouts/scripts"
+resources.layout.layout = default
+
+admin.resources.layout.layout = admin
+default.resources.layout.layout = default
+
+
+resources.view.helperPath.App_View_Helper = APPLICATION_PATH "/views/helpers"
+
+
+resources.modules[]=
+resources.db.adapter = "pdo_pgsql"
+resources.db.params.host = "192.168.91.39"
+resources.db.params.username = "postgres"
+resources.db.params.password = "nopass2011"
+resources.db.params.dbname = "hurryhurry"
+
+
+[staging : production]
+
+[testing : production]
+phpSettings.display_startup_errors = 1
+phpSettings.display_errors = 1
+
+[development : production]
+phpSettings.display_startup_errors = 1
+phpSettings.display_errors = 1
+
