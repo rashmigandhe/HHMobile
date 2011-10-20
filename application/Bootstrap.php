@@ -49,6 +49,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	{
 	
 		$frontController = Zend_Controller_Front::getInstance();
+	
 		$restRoute = new Zend_Rest_Route($frontController);
 		$url=$_SERVER['REQUEST_URI'];
 		if (stripos($url, "mobileapi") > -1)

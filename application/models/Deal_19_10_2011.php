@@ -12,7 +12,6 @@ class App_Model_Deal extends Zend_Db_Table
 
 public function listDealModule($data)
 	{
-		
 		if(isset($data['UserID']))
 		{
 			#-- chk for session in table user_session_id 
@@ -30,18 +29,6 @@ public function listDealModule($data)
 			#-- fecth list of Deals
 			try
 			{
-
-				if(isset($data['City']))
-				{
-					if($data['City']=="")
-					{
-						$data['City']="notfound";
-					}
-				}
-				else
-				{
-					$data['City']="notfound";
-				}
 				$db = Zend_Db_Table::getDefaultAdapter();
 				$query=  $db->select()
 				->from(array('del' => $this->_name, array('id','description', 'tiny_description', 'type')))
@@ -53,13 +40,15 @@ public function listDealModule($data)
 				'buss.category_id = buss_cat.id', array('name', "buss_cat_id"=>'id'));
 
 
-						if($data['DealTypeID']!='-1')
+
+			
+				if($data['DealTypeID']!='-1')
 				{
 					//value for DealTypeID as -1/HurryBackReward/HurryUpDeal/HurryInSpecial
 					$query->where($this->getAdapter()->quoteInto('del.type  = ?', $data['DealTypeID']));
 				}
 
-				/*if(isset($data['Latitude']))
+				if(isset($data['Latitude']))
 				{
 					$query->where($this->getAdapter()->quoteInto('buss_loc.latitude  = ?', $data['Latitude']));
 				}
@@ -67,12 +56,6 @@ public function listDealModule($data)
 				if(isset($data['Longitude']))
 				{
 					$query->where($this->getAdapter()->quoteInto('buss_loc.longitude  = ?', $data['Longitude']));
-				}*/
-
-				if(isset($data['City']))
-				{
-								
-					 $query->where($this->getAdapter()->quoteInto('buss_loc.address like ?', '%'.$data['City'].'%'));
 				}
 
 				if($data['BusinessID']!='-1')
