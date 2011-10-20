@@ -33,14 +33,11 @@ set_time_limit(120) ;
 
 #-- For  get List of deals
 //$post_field_str= "Format=json&API=GetDeals&UserAgent=web&UserDetail=abc&APIKey=4d8d0522-a76b-46a3-8be6-14d0fd509417&CategoryID=1&DealTypeID=-1&PageNumber=1&RecordsPerPage=5&BusinessID=-1";
-//&UserID=142&SessionID=61jha6kqtvs2b7hruu5nkboif3
-//Latitude=35.782902&Longitude=-78.6472081&
 
-#-- For  get List of deals
-//$post_field_str= "Format=json&API=GetDeals&UserAgent=Android&UserDetail=google_sdk&APIKey=4d8d0522-a76b-46a3-8be6-14d0fd509417&CategoryID=1&DealTypeID=-1&PageNumber=2&RecordsPerPage=25&BusinessID=-1";
-//&UserID=142&SessionID=61jha6kqtvs2b7hruu5nkboif3
-//Latitude=35.782902&Longitude=-78.6472081&
+$post_field_str= "Format=json&API=GetDeals&UserAgent=web&UserDetail=abc&APIKey=4d8d0522-a76b-46a3-8be6-14d0fd509417&CategoryID=1&DealTypeID=-1&PageNumber=1&RecordsPerPage=3&BusinessID=-1&Latitude=35.782902&Longitude=-78.656778&City=Columbia";
+ //City=Gainesville Columbia
 
+//&Latitude=35.782902&Longitude=-78.656778
 
 #-- for get deal details
 //$post_field_str= "format=json&API=GetDealDetails&UserAgent=web&UserDetail=abc&APIKey=4d8d0522-a76b-46a3-8be6-14d0fd509417&DealID=15";
@@ -57,16 +54,20 @@ set_time_limit(120) ;
 
 
 #-- For Get User Favourite Businesses 
-$post_field_str= "format=json&API=GetUserFavoritesBusinesses&UserAgent=web&UserDetail=abc&APIKey=4d8d0522-a76b-46a3-8be6-14d0fd509417&UserID=130&PageNumber=1&RecordsPerPage=10&SessionID=4o3la11nvlnp2hc1v6c3r49ne7";
+//$post_field_str= "format=json&API=GetUserFavoritesBusinesses&UserAgent=web&UserDetail=abc&APIKey=4d8d0522-a76b-46a3-8be6-14d0fd509417&UserID=130&PageNumber=1&RecordsPerPage=10&SessionID=4o3la11nvlnp2hc1v6c3r49ne7";
 
 
 
 
 		$curl_handle=curl_init();
-		//curl_setopt($curl_handle,CURLOPT_URL,'http://localhost/Sirka/public/mobileapi/');
-		//curl_setopt($curl_handle,CURLOPT_URL,'http://192.168.91.108/mobileapi/');
-		curl_setopt($curl_handle,CURLOPT_URL,'http://192.168.91.108/hurryhurry/public/mobileapi/');
-	//	curl_setopt($curl_handle,CURLOPT_URL,'http://localhost/ZendRest/public/mobileapi/');
+
+	curl_setopt($curl_handle,CURLOPT_URL,'http://192.168.91.108/hurryhurry/public/mobileapi/');
+//	curl_setopt($curl_handle,CURLOPT_URL,'http://50.17.44.44/public/mobileapi/');
+
+		//curl_setopt($curl_handle,CURLOPT_URL,'http://localhost/ZendRest/public/mobileapi/');
+
+		//curl_setopt($curl_handle,CURLOPT_URL,'http://50.17.44.44/public/mobileapi/');
+
 		curl_setopt($curl_handle,CURLOPT_RETURNTRANSFER,1);
 		curl_setopt($curl_handle, CURLOPT_AUTOREFERER, TRUE);
 		curl_setopt($curl_handle, CURLOPT_FRESH_CONNECT, TRUE);
