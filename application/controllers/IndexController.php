@@ -12,6 +12,7 @@ class IndexController extends Zend_Controller_Action
     {
 		try
 		{
+			require "application/models/Test.php";
  		$obj1 = new App_Model_Test();
 		$res = $obj1->testModule();
 		echo "res=$res<br>";
